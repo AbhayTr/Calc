@@ -159,10 +159,9 @@ def clear():
                 k = ""
 bkd = Button(root, text = "C", command = clear, fg = "brown", bg = "aqua").place(x = 40, y = 160)
 def de():
-                try:
-                    global s; global k
+                global s; global k
+                if s != "" and k != "":
                     l.config(font = "Helvetica 20 bold"); l.config(fg = "blue")
-                    exec("f = " + k)
                     l.config(font = "Helvetica 20 bold"); l.config(fg = "blue")
                     k = k[:-1]
                     for i in range(len(s) - 1, -1, -1):
@@ -171,7 +170,9 @@ def de():
                             s = s[:(-1 * f)]
                             mytext.set(s)
                             break
-                except:
+                else:
+                    l.config(font = "Helvetica 20 bold"); l.config(fg = "blue")
+                    l.config(font = "Helvetica 20 bold"); l.config(fg = "blue")
                     k = ""
                     s = ""
                     mytext.set("")
