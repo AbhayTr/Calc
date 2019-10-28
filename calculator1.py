@@ -1,4 +1,5 @@
 from tkinter import *
+from math import *
 
 s = ""
 k = ""
